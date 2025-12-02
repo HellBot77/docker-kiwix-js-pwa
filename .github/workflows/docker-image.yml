@@ -8,7 +8,7 @@ on:
 env:
   PLATFORMS: linux/arm64
   SOURCE_REPOSITORY: kiwix/kiwix-js-pwa
-  DOCKERHUB_REPOSITORY: helllord/kiwix-pwa
+  DOCKERHUB_REPOSITORY: helllord/kiwix-js-pwa
 
 jobs:
   get-tag:

@@ -10,9 +10,9 @@ FROM node:alpine AS build
 
 WORKDIR /kiwix-js-pwa
 COPY --from=base /git/kiwix-js-pwa .
-RUN npm install && \
+RUN npm ci && \
     npm run build
 
-FROM lipanski/docker-static-website
+FROM joseluisq/static-web-server
 
-COPY --from=build /kiwix-js-pwa/dist .
+COPY --from=build /kiwix-js-pwa/dist ./public
