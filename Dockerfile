@@ -6,7 +6,7 @@ RUN git clone https://github.com/kiwix/kiwix-js-pwa.git && \
     ([[ "$TAG" = "latest" ]] || git checkout ${TAG}) && \
     rm -rf .git
 
-FROM node:alpine AS build
+FROM --platform=$BUILDPLATFORM node:alpine AS build
 
 WORKDIR /kiwix-js-pwa
 COPY --from=base /git/kiwix-js-pwa .
